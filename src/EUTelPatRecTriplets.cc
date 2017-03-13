@@ -389,9 +389,18 @@ float EUTelPatRecTriplets::getDistLocal(std::vector<EUTelHit>::iterator itHit, s
         streamlog_out(DEBUG0) <<"Pixel:  X delta: " << fabs(local[0]) << " Y delta: " << fabs(local[1]) << std::endl;
         dist = sqrt(pow(local[0],2)+pow(local[1],2));
     }else if(_planeDimensions[itHit->getLocation()] == 1){
-        streamlog_out(DEBUG0) << "Strip: " <<"X delta: " << fabs(local[0]) << std::endl;
-        ///Keep it positive, the distance that is!!!
-        dist = sqrt(pow(local[0],2));
+        if(_dutDirection==0) 
+        {
+            streamlog_out(DEBUG0) << "Strip: " <<"X delta: " << fabs(local[0]) << std::endl;
+            /////Keep it positive, the distance that is!!!
+            dist = sqrt(pow(local[0],2));
+        }else if(_dutDirection==1){ 
+            streamlog_out(DEBUG0) << "Strip: " <<"Y delta: " << fabs(local[1]) << std::endl;
+            ///Keep it positive, the distance that is!!!
+            dist = sqrt(pow(local[1],2));
+        }else{
+            throw(lcio::Exception( "The direction of DUT is wrong!"));
+        }
     }else{
         throw(lcio::Exception( "This is not a strip or pixel sensor!"));
     }

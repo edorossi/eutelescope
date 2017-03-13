@@ -138,6 +138,8 @@ namespace eutelescope {
         int _minHits;
         ///the dimention vector.
         IntVec _planeDimension;
+        //the DUT direction 
+        int _dutDirection;
 		/// Number of events processed
 		int _nProcessedRuns;
 		/// Number of runs processed 
