@@ -110,6 +110,7 @@ namespace eutelescope {
     ///\todo Could infer this from resolution. 
 
     void setPlaneDimensionsVec(EVENT::IntVec& planeDimensions);
+    void setDUTDirection(int dutDirections){_dutDirection=dutDirections;}
     inline int getEventNumber()	const {
         return _eventNumber;
     }
@@ -291,6 +292,7 @@ namespace eutelescope {
     //VARIABLES
     int _eventNumber;
     int _totalNumberOfHits;
+    int _dutDirection;
     std::map< int, int > _planeDimensions;
     unsigned int _numberTripletsLeft;
     unsigned int _numberTripletsRight;
