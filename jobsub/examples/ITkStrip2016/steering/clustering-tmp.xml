@@ -17,7 +17,7 @@
 
    <execute>
       <processor name="AIDA"/>
-      <xprocessor name="LoadHotPixelDB"/>
+      <processor name="LoadHotPixelDB"/>
       <processor name="ClusteringMimosa"/>  
       <processor name="NoisyClusterMaskerM26"/>  
       <processor name="NoisyClusterRemoverM26"/>
