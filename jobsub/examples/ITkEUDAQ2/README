@@ -1,0 +1,1 @@
+First tentative for a working example compatible with EUDAQ2. This works exactly as the examples GBL/SCT and ITkStrip2016, but the first step, the "converter", is replaced by "noisypixel" that accepts as an input an Lcio file and not a raw file.
