@@ -20,8 +20,8 @@ std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX2 = "Resi
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX3 = "Residual3X";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX4 = "Residual4X";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX5 = "Residual5X";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut1 = "ResidualDut1X";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut2 = "ResidualDut2X";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut1 = "ResidualDutX";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut2 = "ResidualFEI4X";
 
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY0 = "Residual0Y";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY1 = "Residual1Y";
@@ -29,8 +29,8 @@ std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY2 = "Resi
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY3 = "Residual3Y";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY4 = "Residual4Y";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY5 = "Residual5Y";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut1 = "ResidualDut1Y";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut2 = "ResidualDut2Y";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut1 = "ResidualDutY";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut2 = "ResidualFEI4Y";
 
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX0p = "Residual0Xpull";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX1p = "Residual1Xpull";
@@ -38,8 +38,8 @@ std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX2p = "Res
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX3p = "Residual3Xpull";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX4p = "Residual4Xpull";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameX5p = "Residual5Xpull";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut1p = "ResidualDut1Xpull";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut2p = "ResidualDut2Xpull";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut1p = "ResidualDUTXpull";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameXDut2p = "ResidualFEI4Xpull";
 
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY0p = "Residual0Ypull";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY1p = "Residual1Ypull";
@@ -47,8 +47,8 @@ std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY2p = "Res
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY3p = "Residual3Ypull";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY4p = "Residual4Ypull";
 std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameY5p = "Residual5Ypull";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut1p = "ResidualDut1Ypull";
-std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut2p = "ResidualDut2Ypull";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut1p = "ResidualDUTYpull";
+std::string EUTelProcessorGBLTrackFit::_histName::_residGblFitHistNameYDut2p = "ResidualFEI4Ypull";
 
 
 EUTelProcessorGBLTrackFit::EUTelProcessorGBLTrackFit() :
@@ -244,16 +244,14 @@ void EUTelProcessorGBLTrackFit::plotResidual(std::map< int, std::map<float, floa
             duts.push_back(*itPla);
         }
 	}
-    int dut1 = -999; int dut2 =-999;
+    int dut1 = -999;
 	for ( std::vector<int>::iterator itPla = duts.begin(); itPla != duts.end(); ++itPla) {
 
         if( itPla == duts.begin()){
             dut1 = *itPla;
         }
-        if( itPla == (duts.begin()+1)){
-            dut2 = *itPla;
-        }
     }
+    int dut2=20;
 
 
 	/* Fill histograms */
