@@ -66,7 +66,7 @@
   <!--Initialization of a simple conditions file handler-->
   <parameter name="SimpleFileHandler" type="StringVec"> hotpixel_m26 @DatabasePath@/@FilePrefix@-hotpixel-m26-db.slcio hotpixel_m26 </parameter>
   <parameter name="SimpleFileHandler" type="StringVec"> hotpixel_apix   @DatabasePath@/run@RunNumber@-hotpixel-apix-db.slcio hotpixel_apix  </parameter>
-  <xparameter name="SimpleFileHandler" type="StringVec"> hotpixel_strip   @DatabasePath@/run@RunNumber@-hotpixel-strip-db.slcio hotpixel_strip  </parameter>
+  <parameter name="SimpleFileHandler" type="StringVec"> hotpixel_strip   @DatabasePath@/run@RunNumber@-hotpixel-strip-db.slcio hotpixel_strip  </parameter>
   <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
   <!--parameter name="Verbosity" type="string" value=""/-->
 </processor>
